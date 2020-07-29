@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Catalog.API.Data;
 using Catalog.API.Data.Interfaces;
+using Catalog.API.Repositories;
+using Catalog.API.Repositories.Interfaces;
 using Catalog.API.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,7 +40,7 @@ namespace Catalog.API
 
             #region Project Dependencies
             services.AddTransient<ICatalogContext, CatalogContext>();
-
+            services.AddTransient<IProductRepository, ProductRepository>();
             #endregion
         }
 

@@ -37,21 +37,21 @@ namespace Catalog.API.Repositories
 
         public async Task<IEnumerable<Product>> GetProductsByCategory(string categoryName)
         {
-            FilterDefinition<Product> filter = Builders<Product>.Filter.ElemMatch(c => c.Category, categoryName);
+           // FilterDefinition<Product> filter = Builders<Product>.Filter.ElemMatch(c => c.Category, categoryName);
 
             return await _catalogContext
                                     .Products
-                                    .Find(filter)
+                                    .Find(c=>c.Category == categoryName)
                                     .ToListAsync();
         }
 
         public async Task<IEnumerable<Product>> GetProductsByName(string name)
         {
-            FilterDefinition<Product> filter = Builders<Product>.Filter.ElemMatch(c => c.Name, name);
+           // FilterDefinition<Product> filter = Builders<Product>.Filter.ElemMatch(c => c.Name, name);
 
             return await _catalogContext
                                     .Products
-                                    .Find(filter)
+                                    .Find(p=>p.Name == name)
                                     .ToListAsync();
         }
         public async Task Create(Product product)
@@ -69,9 +69,9 @@ namespace Catalog.API.Repositories
 
         public async Task<bool> Delete(string id)
         {
-            FilterDefinition<Product> filter = Builders<Product>.Filter.ElemMatch(c => c.Id, id);
+           // FilterDefinition<Product> filter = Builders<Product>.Filter.ElemMatch(c => c.Id, id);
 
-            DeleteResult deleteResult = await _catalogContext.Products.DeleteOneAsync(filter);
+            DeleteResult deleteResult = await _catalogContext.Products.DeleteOneAsync(c=>c.Id == id);
             return deleteResult.IsAcknowledged
                                     && deleteResult.DeletedCount > 0;
         }
