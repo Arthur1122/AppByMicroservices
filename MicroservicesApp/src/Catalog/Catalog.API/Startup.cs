@@ -33,6 +33,9 @@ namespace Catalog.API
             // create instance of ICatalogDatabaseSettings using propertis (inside of CatalogDatabaseSettings)
             services.AddSingleton<ICatalogDatabaseSettings>(op => op.GetRequiredService<IOptions<CatalogDatabaseSettings>>().Value);
             #endregion
+
+            // add transient type of creating instance using ICatalogDatabaseSettings interface
+            services.AddTransient<ICatalogDatabaseSettings, CatalogDatabaseSettings>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
