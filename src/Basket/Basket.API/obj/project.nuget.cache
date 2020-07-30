@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hD0NnovLXZP7i4rN/7/UR88UfySXYZBCQRAWmxm9MDQdGtHCvJVWdK01O6xHKOxFjyArxhiS09v0G2MjpENdtg==",
+  "dgSpecHash": "ddbpaRdkHKFbtM3KRbT6a1Q+xwmNsX7YQ1Yzvwv7M1Q9iicdMBrQiqHmWpHwCv8bVH76qzSTrpbwGp4XQyh4cw==",
   "success": true,
   "projectFilePath": "C:\\Users\\6410\\Documents\\Development\\MicroServicesApp\\src\\Basket\\Basket.API\\Basket.API.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\6410\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\6410\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\6410\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\6410\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\6410\\.nuget\\packages\\pipelines.sockets.unofficial\\2.1.16\\pipelines.sockets.unofficial.2.1.16.nupkg.sha512",
     "C:\\Users\\6410\\.nuget\\packages\\stackexchange.redis\\2.1.58\\stackexchange.redis.2.1.58.nupkg.sha512",
     "C:\\Users\\6410\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
