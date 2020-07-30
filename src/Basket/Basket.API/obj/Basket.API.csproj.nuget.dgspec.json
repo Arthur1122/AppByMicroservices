@@ -48,6 +48,10 @@
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.1.58, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.1, )"
             }
           },
           "imports": [

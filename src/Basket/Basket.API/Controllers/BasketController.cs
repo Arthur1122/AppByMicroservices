@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Basket.API.Controllers
 {
-    [Route("api/v1/controller")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class BasketController : ControllerBase
     {
@@ -22,7 +22,7 @@ namespace Basket.API.Controllers
         public async Task<ActionResult<BasketCart>> GetBasket(string userName)
         {
             var basket = await _basketRepository.GetBasket(userName);
-            return Ok(basket);
+            return Ok(basket ?? new BasketCart(userName));
         }
 
         [HttpPost]
