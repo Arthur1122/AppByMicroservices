@@ -21,7 +21,7 @@ namespace Basket.API.Entities
         }
 
         // calculate price 
-        public decimal MyProperty
+        public decimal TotalPrice
         {
             get
             {
