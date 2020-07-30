@@ -10,8 +10,6 @@ C:\Users\6410\Documents\Development\MicroServicesApp\src\Basket\Basket.API\bin\D
 C:\Users\6410\Documents\Development\MicroServicesApp\src\Basket\Basket.API\obj\Debug\netcoreapp3.1\Basket.API.csprojAssemblyReference.cache
 C:\Users\6410\Documents\Development\MicroServicesApp\src\Basket\Basket.API\obj\Debug\netcoreapp3.1\Basket.API.AssemblyInfoInputs.cache
 C:\Users\6410\Documents\Development\MicroServicesApp\src\Basket\Basket.API\obj\Debug\netcoreapp3.1\Basket.API.AssemblyInfo.cs
-C:\Users\6410\Documents\Development\MicroServicesApp\src\Basket\Basket.API\obj\Debug\netcoreapp3.1\Basket.API.csproj.CoreCompileInputs.cache
-C:\Users\6410\Documents\Development\MicroServicesApp\src\Basket\Basket.API\obj\Debug\netcoreapp3.1\Basket.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\6410\Documents\Development\MicroServicesApp\src\Basket\Basket.API\obj\Debug\netcoreapp3.1\Basket.API.RazorTargetAssemblyInfo.cache
 C:\Users\6410\Documents\Development\MicroServicesApp\src\Basket\Basket.API\obj\Debug\netcoreapp3.1\staticwebassets\Basket.API.StaticWebAssets.Manifest.cache
 C:\Users\6410\Documents\Development\MicroServicesApp\src\Basket\Basket.API\obj\Debug\netcoreapp3.1\staticwebassets\Basket.API.StaticWebAssets.xml
