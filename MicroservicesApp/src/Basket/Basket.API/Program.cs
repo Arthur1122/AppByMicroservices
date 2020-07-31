@@ -4,12 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Ordering.Infostructure.Data;
-using Ordering.InfoStructure.Data;
-using Ordering.Infrastructure.Data;
 
 namespace Basket.API
 {
@@ -17,12 +13,8 @@ namespace Basket.API
     {
         public static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args).Build();
-            CreateAndSeedDatabase(host);
-            host.Run();
+            CreateHostBuilder(args).Build().Run();
         }
-
-       
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
@@ -30,26 +22,5 @@ namespace Basket.API
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-
-        private static void CreateAndSeedDatabase(IHost host)
-        {
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-
-                try
-                {
-                    var orderContext = services.GetRequiredService<OrderContext>();
-                    OrderContextSeed.SeedAsync(orderContext, loggerFactory);
-                }
-                catch (Exception exception)
-                {
-                    var logger = loggerFactory.CreateLogger<Program>();
-                    logger.LogError(exception.Message);
-                }
-
-            }
-        }
     }
 }
