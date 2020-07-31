@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿
+using FluentValidation;
 using MediatR;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace Ordering.Application.PipelineBehaviours
                 .Select(x => x.Validate(context))
                 .SelectMany(x => x.Errors)
                 .Where(x => x != null)
-                .ToList();            
+                .ToList();
 
             if (failures.Any())
             {
