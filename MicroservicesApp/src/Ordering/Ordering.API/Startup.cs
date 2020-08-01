@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using AutoMapper;
 using EventBusRabbitMQ;
+using EventBusRabbitMQ.Producer;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,6 +16,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Ordering.API.RabbitMQ;
 using Ordering.Application.Handlers;
 using Ordering.Application.PipelineBehaviours;
 using Ordering.Core.Repositories;
@@ -86,6 +88,7 @@ namespace Ordering.API
 
                 return new RabbitMQConnection(factory);
             });
+            services.AddSingleton<EventBusRabbitMQConsumer>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
