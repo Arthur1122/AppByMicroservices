@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using AutoMapper;
+using EventBusRabbitMQ;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,6 +22,7 @@ using Ordering.Core.Repositories.Base;
 using Ordering.Infostructure.Repository;
 using Ordering.Infostructure.Repository.Base;
 using Ordering.InfoStructure.Data;
+using RabbitMQ.Client;
 
 namespace Ordering.API
 {
@@ -65,7 +67,25 @@ namespace Ordering.API
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
 
             #endregion
+            services.AddSingleton<IRabbitMQConnection>(sp =>
+            {
+                var factory = new ConnectionFactory()
+                {
+                    HostName = Configuration["EventBus:HostName"]
+                };
 
+                if (!string.IsNullOrEmpty(Configuration["EventBus:UserName"]))
+                {
+                    factory.UserName = Configuration["EventBus:UserName"];
+                }
+
+                if (!string.IsNullOrEmpty(Configuration["EventBus:Password"]))
+                {
+                    factory.UserName = Configuration["EventBus:Password"];
+                }
+
+                return new RabbitMQConnection(factory);
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
